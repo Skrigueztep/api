@@ -13,6 +13,8 @@ export class Server {
 
     private setConfig(): void {
         this._server.set('PORT', environment.port);
+        this._server.use(express.json());
+        this._server.use(express.urlencoded({ extended: false }));
     }
 
     private setRoutes(): void {
