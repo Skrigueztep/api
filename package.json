@@ -11,12 +11,14 @@
   "author": "Israel Olvera (skrigueztep@gmail.com)[https://github.com/Skrigueztep]",
   "license": "Private",
   "devDependencies": {
+    "@types/compression": "^1.7.0",
     "@types/express": "^4.17.7",
     "@types/node": "^14.0.26",
     "@types/typescript": "^2.0.0",
     "typescript": "^3.9.7"
   },
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1"
   }
 }
