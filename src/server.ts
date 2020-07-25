@@ -1,13 +1,22 @@
 import express from 'express';
 import {environment} from "./environments/environment";
 import compression from "compression";
+import cors from "cors";
 
 export class Server {
 
     private readonly _server: express.Application;
+    private readonly _corsConfig: cors.CorsOptions;
 
     constructor() {
         this._server = express();
+        this._corsConfig = {
+            allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
+            credentials: true,
+            methods: "GET,HEAD,OPTIONS,PUT,POST,DELETE",
+            origin: ["http://localhost:4200"],
+            preflightContinue: false
+        };
         this.setConfig();
         this.setRoutes();
     }
@@ -17,6 +26,7 @@ export class Server {
         this._server.use(express.json());
         this._server.use(express.urlencoded({ extended: false }));
         this._server.use(compression({ level: 9 }));
+        this._server.use(cors(this._corsConfig));
     }
 
     private setRoutes(): void {
