@@ -1,0 +1,11 @@
+# IntelliJ Folder
+.idea
+
+# Dist Folder
+dist
+
+# Node Modules Folder
+node_modules
+
+# Package-lock.json
+package-lock.json

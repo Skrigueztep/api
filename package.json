@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "A base API Project Structure",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Israel Olvera (skrigueztep@gmail.com)[https://github.com/Skrigueztep]",
+  "license": "Private",
+  "devDependencies": {
+    "@types/node": "^14.0.26",
+    "@types/typescript": "^2.0.0",
+    "typescript": "^3.9.7"
+  }
+}
