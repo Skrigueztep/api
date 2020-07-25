@@ -1,5 +1,6 @@
 import express from 'express';
 import {environment} from "./environments/environment";
+import compression from "compression";
 
 export class Server {
 
@@ -15,6 +16,7 @@ export class Server {
         this._server.set('PORT', environment.port);
         this._server.use(express.json());
         this._server.use(express.urlencoded({ extended: false }));
+        this._server.use(compression({ level: 9 }));
     }
 
     private setRoutes(): void {
