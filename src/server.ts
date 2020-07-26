@@ -36,6 +36,17 @@ export class Server extends Api {
     }
 
     start(): express.Application {
+        this._server.get('/', (req, res) => {
+            res.status(200).send("Server working...");
+        });
+
+        this._server.get('/api', (req, res) => {
+            res.status(200).send("API Server working...");
+        });
+
+        this._server.get('/api/v1', (req, res) => {
+            res.status(200).send("API Server V1 working...");
+        });
         return this._server;
     }
 
