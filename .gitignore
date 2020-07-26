@@ -1,5 +1,6 @@
 # IntelliJ Folder
 .idea
+.nyc_output
 
 # Dist Folder
 dist
