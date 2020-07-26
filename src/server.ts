@@ -2,13 +2,15 @@ import express from 'express';
 import {environment} from "./environments/environment";
 import compression from "compression";
 import cors from "cors";
+import {Api} from "./api";
 
-export class Server {
+export class Server extends Api {
 
     private readonly _server: express.Application;
     private readonly _corsConfig: cors.CorsOptions;
 
     constructor() {
+        super();
         this._server = express();
         this._corsConfig = {
             allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
@@ -30,7 +32,7 @@ export class Server {
     }
 
     private setRoutes(): void {
-        // this._server.use();
+        this._server.use('/api/v1', this.setRoutesV1());
     }
 
     start(): express.Application {
