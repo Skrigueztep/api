@@ -1,4 +1,6 @@
 {
-  "spec_dir": "./src",
-  "spec_files": ["**/*.spec.ts"]
+  "type": "node",
+  "spec_dir": "./test",
+  "spec_files": ["**/*.spec.ts"],
+  "exclude": [ "**/node_modules/**" ]
 }

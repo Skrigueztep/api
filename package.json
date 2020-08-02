@@ -4,7 +4,7 @@
   "description": "A base API Project Structure",
   "main": "src/app.ts",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "tsc && node dist/src/app.js",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "coverage": "nyc -r text -e .ts -x \"**/*.spec.ts\" npm run test"
   },
