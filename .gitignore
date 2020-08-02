@@ -1,6 +1,9 @@
 # IntelliJ Folder
 .idea
+
+# NYC for istanbul folder
 .nyc_output
+coverage
 
 # Dist Folder
 dist
