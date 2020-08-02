@@ -3,6 +3,9 @@ import {environment} from "./environments/environment";
 import compression from "compression";
 import cors from "cors";
 import {Api} from "./api";
+import morgan from "morgan";
+import {createStream} from "rotating-file-stream";
+import { join } from 'path';
 
 export class Server extends Api {
 
@@ -26,6 +29,8 @@ export class Server extends Api {
     private setConfig(): void {
         this._server.set('PORT', environment.port);
         this._server.use(express.json());
+        const logStream = createStream('api.log', { interval: '1d', path: join(__dirname, 'log'), encoding: "utf8" });
+        this._server.use(morgan('combined', { stream: logStream }));
         this._server.use(express.urlencoded({ extended: false }));
         this._server.use(compression({ level: 9 }));
         this._server.use(cors(this._corsConfig));
