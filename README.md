@@ -26,3 +26,11 @@ A base API Project Structure
        <code>this._router.use(new myCustomRoutes().configRoutes());</code>
        
    Where configRoutes method return express.Router (configRoutes(): Router)
+   
+#### Certificates .key and .crt
+
+You should create your .key and .crt files on /src/cers directory (webpack move it at build)
+
+##### Certificates generation
+
+- <code> openssl req -x509 -newkey rsa:4086 -nodes -sha256 -keyout api.key -out api.crt </code>
