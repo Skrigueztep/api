@@ -4,7 +4,8 @@
   "description": "A base API Project Structure",
   "main": "src/app.ts",
   "scripts": {
-    "start": "tsc && node dist/src/app.js",
+    "start": "tsc && webpack --config webpack.config.js && node dist/src/app.js",
+    "build": "tsc && webpack --config webpack.config.js",
     "test": "jasmine-ts --config=jasmine.json",
     "coverage": "nyc -r html -e .ts -x \"**/*.spec.ts\" npm run test"
   },
